@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: Create new scratch file from selection
+
+  datasource:
+    url: jdbc:postgresql://localhost:5435/brightforge
+    driver-class-name: org.postgresql.Driver
+    username: brightforge_dev
+    password: brightforge_dev12
+  jpa:
+    generate-ddl: false
+    hibernate:
+      ddl-auto: none
+
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
+
+server:
+  port: 8080

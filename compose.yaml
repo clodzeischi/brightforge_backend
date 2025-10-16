@@ -1,0 +1,19 @@
+version: "3.8"
+services:
+  postgres:
+    container_name: brightforge-postgres
+    image: postgres:latest
+    restart: always
+    environment:
+      POSTGRES_USER: brightforge_dev
+      POSTGRES_PASSWORD: brightforge_dev12
+      POSTGRES_DB: brightforge
+      POSTGRES_HOST_AUTH_METHOD: password
+    ports:
+      - "5435:5432"
+    volumes:
+      - ./postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgresql_data:
+    driver: local
