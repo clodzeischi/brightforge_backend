@@ -1,24 +1,35 @@
 package swf.army.mil.brightforge_backend.color;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 import swf.army.mil.brightforge_backend.variant.Variant;
 
 import java.util.List;
 
 @Entity
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class Color {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(nullable = false, unique = true)
     private String code;
+
+    @Column(nullable = false)
     private String label;
+
+    @Column(nullable = false, length = 7)
     private String hex;
 
-    @OneToMany(mappedBy = "color")
+
+    @OneToMany(mappedBy = "color", fetch = FetchType.LAZY)
     private List<Variant> variants;
 }
 
