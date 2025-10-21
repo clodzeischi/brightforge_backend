@@ -30,7 +30,9 @@ public class Variant {
     private Color color;
 
     private String imageUrl;
-    private BigDecimal usefulnessRating;
+    private BigDecimal rating;
+
+    @Column(nullable = false)
     private Integer qty;
 
     @Enumerated(EnumType.STRING)
