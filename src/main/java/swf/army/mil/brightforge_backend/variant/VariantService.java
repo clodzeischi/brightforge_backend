@@ -9,7 +9,7 @@ import java.util.List;
 @Service
 public class VariantService {
 
-    VariantRepository variantRepository;
+    private final VariantRepository variantRepository;
 
     VariantService(VariantRepository r) { this.variantRepository = r; }
 
@@ -23,15 +23,18 @@ public class VariantService {
     }
 
     public Variant getVariantByID(Long id) {
-
         return variantRepository.findById(id)
-                .orElseThrow(() -> new EntityNotFoundException("Post not found"));
+                .orElseThrow(() -> new EntityNotFoundException("Variant not found"));
+    }
+
+    public List<Variant> getVariantsByColor(List<String> colorNames) {
+        return variantRepository.findByColor_NameInIgnoreCase(colorNames);
     }
 
     @Transactional
     public Variant modifyVariant(Variant changedVariant) {
         Variant myVariant = variantRepository.findById(changedVariant.getId())
-                .orElseThrow(() -> new EntityNotFoundException("Post not found"));
+                .orElseThrow(() -> new EntityNotFoundException("Variant not found"));
 
         myVariant.setProduct(changedVariant.getProduct());
         myVariant.setColor(changedVariant.getColor());
@@ -42,10 +45,9 @@ public class VariantService {
     }
 
     @Transactional
-    public Variant deleteVariant(Long id) {
+    public void deleteVariant(Long id) {
         Variant myColor = variantRepository.findById(id)
-                .orElseThrow(() -> new EntityNotFoundException("Post not found"));
-        variantRepository.deleteById(id);
-        return myColor;
+                .orElseThrow(() -> new EntityNotFoundException("Variant not found"));
+        variantRepository.delete(myColor);
     }
 }

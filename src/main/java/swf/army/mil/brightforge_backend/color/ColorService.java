@@ -10,18 +10,14 @@ import java.util.List;
 @Service
 public class ColorService {
 
-    ColorRepository colorRepository;
+    private final ColorRepository colorRepository;
 
     ColorService(ColorRepository r) { this.colorRepository = r; }
 
     @Transactional
-    public Color saveColor(Color color) {
-        return colorRepository.save(color);
-    }
+    public Color saveColor(Color color) { return colorRepository.save(color); }
 
-    public List<Color> getAllColors() {
-        return colorRepository.findAll();
-    }
+    public List<Color> getAllColors() { return colorRepository.findAll(); }
 
     public Color getColorByID(Long id) {
         return colorRepository.findById(id)

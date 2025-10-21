@@ -28,8 +28,7 @@ public class Color {
     @Column(nullable = false, length = 7)
     private String hex;
 
-
-    @OneToMany(mappedBy = "color", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "color", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Variant> variants;
 }
 

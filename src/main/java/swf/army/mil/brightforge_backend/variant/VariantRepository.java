@@ -2,4 +2,8 @@ package swf.army.mil.brightforge_backend.variant;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface VariantRepository extends JpaRepository<Variant, Long> { }
+import java.util.List;
+
+public interface VariantRepository extends JpaRepository<Variant, Long> {
+    List<Variant> findByColor_NameInIgnoreCase(List<String> colorNames);
+}

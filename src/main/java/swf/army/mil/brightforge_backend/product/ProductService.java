@@ -9,18 +9,14 @@ import java.util.List;
 @Service
 public class ProductService {
 
-    ProductRepository productRepository;
+    private final ProductRepository productRepository;
 
     ProductService(ProductRepository r) { this.productRepository = r; }
 
     @Transactional
-    public Product saveProduct(Product product) {
-        return productRepository.save(product);
-    }
+    public Product saveProduct(Product product) { return productRepository.save(product); }
 
-    public List<Product> getAllProducts() {
-        return productRepository.findAll();
-    }
+    public List<Product> getAllProducts() { return productRepository.findAll(); }
 
     public Product getProductByID(Long id) {
         return productRepository.findById(id)

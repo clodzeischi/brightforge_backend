@@ -28,11 +28,9 @@ public class ColorController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Color> getColorById(@PathVariable Long id) {
+    public ResponseEntity<Color> getColorByID(@PathVariable Long id) {
         Color color = colorService.getColorByID(id);
-
-        if (color != null) return ResponseEntity.ok(color);
-        else return ResponseEntity.notFound().build();
+        return ResponseEntity.ok(color);
     }
 
     @PutMapping("/{id}")
