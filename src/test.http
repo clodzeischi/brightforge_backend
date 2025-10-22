@@ -1,0 +1,56 @@
+###
+POST http://localhost:8080/api/color
+Content-Type: application/json
+
+{
+  "code": "or",
+  "label": "orange",
+  "hex": "#E27A53"
+}
+
+###
+PUT http://localhost:8080/api/color/1
+Content-Type: application/json
+
+{
+  "code": "bk",
+  "label": "black",
+  "hex": "#000000"
+}
+
+###
+POST http://localhost:8080/api/product
+Content-Type: application/json
+
+{
+  "slug": "nullbrick",
+  "name": "Nullbrick",
+  "description": "A brick of pure potential. And zero functionality."
+}
+
+###
+PUT http://localhost:8080/api/product/1
+Content-Type: application/json
+
+{
+  "slug": "pebble",
+  "name": "Phase Pebble 2",
+  "description": "Vibrates ominously."
+}
+
+###
+GET http://localhost:8080/api/variant/1
+
+
+###
+POST http://localhost:8080/api/variant
+Content-Type: application/json
+
+{
+  "product": {"id": 2},
+  "color": {"id": 2},
+  "imageUrl": "/public/nullbrick_orange.png",
+  "rating": 4.2,
+  "qty": 2,
+  "lifecycleStatus": "ACTIVE"
+}

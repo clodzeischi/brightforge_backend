@@ -1,5 +1,6 @@
 package swf.army.mil.brightforge_backend.color;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -27,8 +28,5 @@ public class Color {
 
     @Column(nullable = false, length = 7)
     private String hex;
-
-    @OneToMany(mappedBy = "color", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Variant> variants;
 }
 

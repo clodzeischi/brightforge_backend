@@ -1,5 +1,6 @@
 package swf.army.mil.brightforge_backend.product;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -27,7 +28,4 @@ public class Product {
 
     @Column(columnDefinition = "TEXT", nullable = false)
     private String description;
-
-    @OneToMany(mappedBy = "product", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    private List<Variant> variants;
 }

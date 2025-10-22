@@ -33,8 +33,8 @@ public class VariantController {
     }
 
     @GetMapping("/bycolor")
-    public ResponseEntity<List<Variant>> getVariantsByColor(@RequestParam List<String> colors) {
-        return ResponseEntity.ok(variantService.getVariantsByColor(colors));
+    public ResponseEntity<List<Variant>> getVariantsByColor(@RequestParam String colorLabel) {
+        return ResponseEntity.ok(variantService.getVariantsByColor(colorLabel));
     }
 
     @PutMapping("/{id}")

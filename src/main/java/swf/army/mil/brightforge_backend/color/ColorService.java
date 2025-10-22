@@ -2,7 +2,6 @@ package swf.army.mil.brightforge_backend.color;
 
 import jakarta.persistence.EntityNotFoundException;
 import jakarta.transaction.Transactional;
-import org.jetbrains.annotations.NotNull;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -25,7 +24,7 @@ public class ColorService {
     }
 
     @Transactional
-    public Color modifyColor(@NotNull Color c) {
+    public Color modifyColor(Color c) {
         Color myColor = colorRepository.findById(c.getId())
                 .orElseThrow(() -> new EntityNotFoundException("Color not found"));
 
