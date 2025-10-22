@@ -3,6 +3,7 @@ package swf.army.mil.brightforge_backend.color;
 import jakarta.persistence.EntityNotFoundException;
 import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
+import swf.army.mil.brightforge_backend.variant.VariantRepository;
 
 import java.util.List;
 
@@ -14,7 +15,7 @@ public class ColorService {
     ColorService(ColorRepository r) { this.colorRepository = r; }
 
     @Transactional
-    public Color saveColor(Color color) { return colorRepository.save(color); }
+    public Color createColor(Color color) { return colorRepository.save(color); }
 
     public List<Color> getAllColors() { return colorRepository.findAll(); }
 

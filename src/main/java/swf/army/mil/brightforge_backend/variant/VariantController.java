@@ -16,7 +16,7 @@ public class VariantController {
 
     @PostMapping
     public ResponseEntity<Variant> createVariant(@RequestBody Variant variant) {
-        Variant saved = variantService.saveVariant(variant);
+        Variant saved = variantService.createVariant(variant);
         return ResponseEntity.status(HttpStatus.CREATED).body(saved);
     }
 

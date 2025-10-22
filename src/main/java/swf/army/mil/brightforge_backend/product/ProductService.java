@@ -14,7 +14,7 @@ public class ProductService {
     ProductService(ProductRepository r) { this.productRepository = r; }
 
     @Transactional
-    public Product saveProduct(Product product) { return productRepository.save(product); }
+    public Product createProduct(Product product) { return productRepository.save(product); }
 
     public List<Product> getAllProducts() { return productRepository.findAll(); }
 

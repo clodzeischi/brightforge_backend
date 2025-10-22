@@ -14,7 +14,7 @@ public class VariantService {
     VariantService(VariantRepository r) { this.variantRepository = r; }
 
     @Transactional
-    public Variant saveVariant(Variant variant) {
+    public Variant createVariant(Variant variant) {
         return variantRepository.save(variant);
     }
 

@@ -54,3 +54,6 @@ Content-Type: application/json
   "qty": 2,
   "lifecycleStatus": "ACTIVE"
 }
+
+###
+DELETE http://localhost:8080/api/color/1
