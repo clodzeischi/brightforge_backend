@@ -49,11 +49,11 @@ Content-Type: application/json
 {
   "product": {"id": 2},
   "color": {"id": 2},
-  "imageUrl": "/public/nullbrick_orange.png",
+  "imageUrl": "/nullbrick_orange.png",
   "rating": 4.2,
   "qty": 2,
   "lifecycleStatus": "ACTIVE"
 }
 
 ###
-DELETE http://localhost:8080/api/color/1
+DELETE http://localhost:8080/api/variant/2

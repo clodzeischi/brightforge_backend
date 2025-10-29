@@ -27,10 +27,6 @@ public class VariantService {
                 .orElseThrow(() -> new EntityNotFoundException("Variant not found"));
     }
 
-    public List<Variant> getVariantsByColor(String colorLabel) {
-        return variantRepository.findByColor_LabelIgnoreCase(colorLabel);
-    }
-
     @Transactional
     public Variant modifyVariant(Variant changedVariant) {
         Variant myVariant = variantRepository.findById(changedVariant.getId())

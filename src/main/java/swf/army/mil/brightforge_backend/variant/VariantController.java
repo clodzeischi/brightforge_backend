@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@CrossOrigin("http://localhost:5173")
 @RestController
 @RequestMapping("/api/variant")
 public class VariantController {
@@ -30,11 +31,6 @@ public class VariantController {
     public ResponseEntity<Variant> getVariantByID(@PathVariable Long id) {
         Variant variant = variantService.getVariantByID(id);
         return ResponseEntity.ok(variant);
-    }
-
-    @GetMapping("/bycolor")
-    public ResponseEntity<List<Variant>> getVariantsByColor(@RequestParam String colorLabel) {
-        return ResponseEntity.ok(variantService.getVariantsByColor(colorLabel));
     }
 
     @PutMapping("/{id}")
