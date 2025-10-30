@@ -35,6 +35,7 @@ public class VariantService {
         myVariant.setProduct(changedVariant.getProduct());
         myVariant.setColor(changedVariant.getColor());
         myVariant.setImageUrl(changedVariant.getImageUrl());
+        myVariant.setQty(changedVariant.getQty());
         myVariant.setLifecycleStatus(changedVariant.getLifecycleStatus());
 
         return myVariant;

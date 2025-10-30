@@ -5,4 +5,4 @@ public enum LifecycleStatus {
     OOS_PERMANENT,
     RETIRED,
     DELETED
-}
+} 
